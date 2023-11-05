@@ -1,12 +1,16 @@
-import './App.css';
+import axios from 'axios';
+import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import About from './components/About.jsx';
 import Card from './components/Card.jsx';
 import Cards from './components/Cards.jsx';
+import Detail from './components/Detail.jsx';
+import Error from './components/Error.jsx';
 import Navbar from './components/Navbar';
-import { useState } from 'react';
-import axios from 'axios';
+import './App.css';
 
 function App() {
-  const [characters, setCharacters] = useState([]); // [estado local, funcion para modificar el estado local]
+  const [characters, setCharacters] = useState([]);
 
   const APIKEY = 'pi-hx-aquintero';
 
@@ -31,15 +35,17 @@ function App() {
   return (
     <div className='App'>
       <Navbar onSearch={onSearch} />
-      <hr />
-      <Cards characters={characters} onClose={onClose} />
-      <hr />
+      <Routes>
+        <Route
+          path='/home'
+          element={<Cards characters={characters} onClose={onClose} />}
+        />
+        <Route path='/about' element={<About />} />
+        <Route path='/detail/:id' element={<Detail />} />
+        <Route path='*' element={<Error />} />
+      </Routes>
     </div>
   );
 }
 
 export default App;
-
-// [characters, setCharacters] = [estado, funcion]
-//characters = ['Alejo', 'Karlos', 'Danilo', 'Cesar']
-//setCharacters = funcion
