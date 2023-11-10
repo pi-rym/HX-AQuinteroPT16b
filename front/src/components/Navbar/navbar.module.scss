@@ -1,0 +1,56 @@
+.navContainer {
+  background-color: $black;
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px;
+  align-items: center;
+
+  @include smartphone {
+    flex-direction: column;
+  }
+
+  .logo {
+    flex: 1;
+  }
+
+  .secondSection {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 10px;
+
+    @include smartphone {
+      width: 100%;
+    }
+  }
+
+  .wrappedItems {
+    display: flex;
+    gap: 12px;
+
+    .linknav {
+      text-decoration: none;
+
+      .itemnav {
+        color: white;
+
+        &:hover {
+          cursor: pointer;
+          color: $hover;
+        }
+      }
+    }
+
+    .logoutnav {
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        cursor: pointer;
+        color: $hover;
+      }
+    }
+  }
+}

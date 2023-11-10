@@ -3,11 +3,11 @@ import { useState, useMemo, useEffect } from 'react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import About from './components/About.jsx';
 import Card from './components/Card.jsx';
-import Cards from './components/Cards.jsx';
+import Cards from './components/Cards/Cards.jsx';
 import Detail from './components/Detail.jsx';
 import Error from './components/Error.jsx';
 import Form from './components/Form.jsx';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar.jsx';
 import './App.css';
 
 function App() {

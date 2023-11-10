@@ -1,0 +1,29 @@
+//Pantalla de smartphones
+$screen-sm: 766px;
+
+//Pantalla de tablets
+$screen-md: 1023px;
+
+//Pantalla de monitor
+$screen-lg: 1024px;
+
+//Mixins para small devices
+@mixin smartphone {
+  @media only screen and (max-width: $screen-sm) {
+    @content;
+  }
+}
+
+//Mixins para tablets
+@mixin tablet {
+  @media only screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+    @content;
+  }
+}
+
+//Mixins para desktop
+@mixin desktop {
+  @media only screen and (min-width: $screen-lg) {
+    @content;
+  }
+}
